@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hover-bounce {
+    transition: transform 0.2s cubic-bezier(.34,1.56,.64,1);
+  }
+  .hover-bounce:hover {
+    transform: scale(1.08);
+  }
+  .hover-bounce:active {
+    transform: scale(0.96);
+  }
+}

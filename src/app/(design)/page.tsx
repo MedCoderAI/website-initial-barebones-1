@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, ToyBrick } from "lucide-react";
+import { ArrowRight, Blocks, BookHeart, ShieldCheck, ToyBrick } from "lucide-react";
 import Link from "next/link";
 import { MCPTabs } from "@/components/design/mcp-tabs.tsx";
 import {
@@ -10,63 +10,68 @@ import {
 } from "@/components/ui/card.tsx";
 import { Hero } from "../../components/hero.tsx";
 import { AboutGettingStarted } from "@/components/getting-started/about-getting-started";
-const componentItems = [
-  { name: "Accordion", path: "/components/accordion" },
-  { name: "Button", path: "/components/button" },
-  { name: "Card", path: "/components/card" },
-  { name: "Dialog", path: "/components/dialog" },
-  { name: "Dropdown Menu", path: "/components/dropdown-menu" },
+const complianceItems = [
+  { name: "Improve compliance with MEAT", path: "" },
+  { name: "Identifies HEDIS gaps in care.", path: "" },
+  { name: "CPT, ICD-10, and Penny (non-billable) codes generation", path: "" },
+  { name: "Built-in compliance bulletin for ongoing review and staff education", path: "" },
+  // { name: "Button", path: "/components/button" },
+  // { name: "Card", path: "/components/card" },
+  // { name: "Dialog", path: "/components/dialog" },
+  // { name: "Dropdown Menu", path: "/components/dropdown-menu" },
 ];
-const blockItems = [
-  { name: "Hero", path: "/blocks/hero" },
-  { name: "Login", path: "/blocks/login" },
-  { name: "Promo", path: "/blocks/promo" },
-  { name: "Product Grid", path: "/blocks/product-grid" },
+const specialtiesItems = [
+  { name: "Cardiology", path: "" },
+  { name: "Urology", path: "" },
+  { name: "Hematology", path: "" },
+  { name: "Hepatology", path: "" },
+  { name: "Internal Medicine", path: "" },
+  { name: "Neurology", path: "" },
+  { name: "Obstetrics", path: "" },
+  { name: "Ophthalmology", path: "" },
+  { name: "Pulmonology", path: "" },
+  { name: "Urgent Care", path: "" },
+  { name: "Endocrinology", path: "" },
+  { name: "Dermatology", path: "" },
 ];
 export default function Home() {
   return (
     <main className="container mt-4 p-5 md:mt-8 md:p-10">
-      <Hero
-        title="Build a Registry"
-        description="This starter helps you create a registry so you can distribute your custom components, hooks, pages, and other files to any React project"
-        buttonText="Learn more"
-        buttonLink="#sale"
-        backgroundImage="/assets/hero.png"
-      />
-      <div className="mb-8">
-        <div className="space-y-2">
-          <h1 className="font-bold text-3xl tracking-tight md:text-4xl">
-            EHR Coder
-          </h1>
-          <p className="text-muted-foreground">
-            Distribute your design system tokens, custom components, hooks,
-            pages, and other files to any React project.
-          </p>
+      <div className="rounded-lg border p-6 mb-6  bg-foreground/10">
+        <div className="flex flex-col gap-2">
+          <Hero
+            title="Medical Coding Assistant"
+            description="The Right Insights, Right When You Need Them. Powered by AI."
+            buttonText="Learn more 🚀"
+            buttonLink="#sale"
+            backgroundImage="/assets/hero.png"
+          />
         </div>
       </div>
+
       <div className="mb-4 grid gap-6 md:grid-cols-2">
         <Card className="shadow-none">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-between">
-              <CardTitle>Components</CardTitle>
+              <CardTitle>Compliance</CardTitle>
               <div className="rounded-md bg-primary p-1">
-                <ToyBrick className="size-5 text-primary-foreground" />
+                <ShieldCheck className="size-5 text-primary-foreground" />
               </div>
             </div>
             <CardDescription>
-              Reusable UI components for your application
+              {/* Reusable UI components for your application */}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              {componentItems.map((item) => (
+            <div className="space-y-2 text-sm">
+              {complianceItems.map((item) => (
                 <div
                   key={item.name}
                   className="flex items-center justify-between"
                 >
-                  <Link href={item.path} className="text-sm hover:underline">
+                  {/* <Link href={item.path} className="text-sm hover:underline"> */}
                     {item.name}
-                  </Link>
+                  {/* </Link> */}
                   <ArrowRight className="size-4 text-muted-foreground" />
                 </div>
               ))}
@@ -76,25 +81,25 @@ export default function Home() {
         <Card className="shadow-none">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-between">
-              <CardTitle>Blocks</CardTitle>
-              <div className="rounded-md bg-foreground p-1">
-                <Blocks className="size-5 text-primary-foreground" />
+              <CardTitle>Specialties</CardTitle>
+              <div className="rounded-md bg-primary p-1">
+                <BookHeart className="size-5 text-primary-foreground" />
               </div>
             </div>
             <CardDescription>
-              Pre-built UI blocks for common patterns
+              {/* Pre-built UI blocks for common patterns */}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              {blockItems.map((item) => (
+            <div className="space-y-2 text-sm">
+              {specialtiesItems.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center justify-between"
+                  className="flex items-center justify-between "
                 >
-                  <Link href={item.path} className="text-sm hover:underline">
+                  {/* <Link href={item.path} className="text-sm hover:underline"> */}
                     {item.name}
-                  </Link>
+                  {/* </Link> */}
                   <ArrowRight className="size-4 text-muted-foreground" />
                 </div>
               ))}
@@ -102,26 +107,13 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
-      <AboutGettingStarted></AboutGettingStarted>
-      <div className="rounded-lg border bg-card p-6">
-        <div className="flex flex-col gap-2">
-          <h2 className="font-semibold text-xl">MCP</h2>
-          <p className="mb-4 text-muted-foreground">
-            Integrate this registry with AI IDEs using Model Context Protocol
-            (MCP) using the following configuration. This utilizes this
-            Registry's style tokens and the Shadcn CLI. To ensure this works,
-            double check that the{" "}
-            <Link href="/r/registry.json">
-              <code className="inline text-sm tabular-nums underline">
-                style:registry
-              </code>
-            </Link>{" "}
-            contains the same colors as your{" "}
-            <code className="inline text-sm tabular-nums">tokens.css</code>
-          </p>
-          <MCPTabs rootUrl={process.env.VERCEL_BRANCH_URL ?? ""} />
+      {/* <AboutGettingStarted></AboutGettingStarted> */}
+      <div className="rounded-lg bg-card p-6 text-muted-foreground">
+        {/* <div className="flex flex-col gap-2"> */}
+          {/* <h2 className="font-semibold text-xl">MCP</h2> */}
+          For any questions or inquiries, please reach out to <Link href={"mailto:ceo@ehrcoder.com"} className="hover:underline">ceo@ehrcoder.com</Link>
         </div>
-      </div>
+      {/* </div> */}
     </main>
   );
 }

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
+import "@/app/bouncy.css";
+
 export function Hero({
   title,
   description,
@@ -16,7 +18,7 @@ export function Hero({
   backgroundImage: string;
 }) {
   return (
-    <div className="relative h-[600px] w-full bg-foreground/10">
+    <div className="relative h-[600px] w-full">
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <Badge variant="secondary" className="mb-4">
@@ -31,7 +33,7 @@ export function Hero({
               asChild
               variant="secondary"
               size="lg"
-              className="rounded-md px-8"
+              className="rounded-md px-8 hover-bounce"
             >
               <Link href={buttonLink}>{buttonText}</Link>
             </Button>
