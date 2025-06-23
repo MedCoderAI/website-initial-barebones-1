@@ -1,9 +1,9 @@
 <a href="https://registry-starter.vercel.app/">
-  <h1 align="center">Registry Starter</h1>
+  <h1 align="center">EHRCoder</h1>
 </a>
 
 <p align="center">
-    Registry Starter is a free, open-source template built with Next.js and Shadcn/ui Registry to accelerate your AI-Native Design System.
+    Medical Coding Assistant
 </p>
 
 <p align="center">

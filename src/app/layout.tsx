@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils.ts";
 import "@/app/tokens.css";
 import "@/app/tailwind.css";
 export const metadata: Metadata = {
-  title: "Registry Starter",
-  description: "Starter to help build a Shadcn Registry using Tailwind v4",
+  title: "EHRCoder",
+  description: "Medical Coding Assistant",
   icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
 };
 const GeistSans = Geist({

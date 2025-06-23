@@ -43,7 +43,7 @@ export default function Home() {
             title="Medical Coding Assistant"
             description="The Right Insights, Right When You Need Them. Powered by AI."
             buttonText="Learn more 🚀"
-            buttonLink="#sale"
+            buttonLink="/about"
             backgroundImage="/assets/hero.png"
           />
         </div>
@@ -72,7 +72,7 @@ export default function Home() {
                   {/* <Link href={item.path} className="text-sm hover:underline"> */}
                     {item.name}
                   {/* </Link> */}
-                  <ArrowRight className="size-4 text-muted-foreground" />
+                  {/* <ArrowRight className="size-4 text-muted-foreground" /> */}
                 </div>
               ))}
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
                   {/* <Link href={item.path} className="text-sm hover:underline"> */}
                     {item.name}
                   {/* </Link> */}
-                  <ArrowRight className="size-4 text-muted-foreground" />
+                  {/* <ArrowRight className="size-4 text-muted-foreground" /> */}
                 </div>
               ))}
             </div>
