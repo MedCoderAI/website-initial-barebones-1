@@ -1,5 +1,4 @@
-import { Hero } from "@/components/hero";
-
+import { Hero } from "@/components/hero.tsx";
 export const hero = {
   name: "hero",
   components: {
