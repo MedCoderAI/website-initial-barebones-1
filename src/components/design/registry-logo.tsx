@@ -1,4 +1,4 @@
-import { Squirrel } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export function RegistryLogo() {
   return (
