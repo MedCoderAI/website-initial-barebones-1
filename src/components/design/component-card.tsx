@@ -3,7 +3,6 @@
 import { Check, Copy } from "lucide-react";
 import { type ReactElement, type ReactNode, useEffect, useState } from "react";
 
-import { OpenInV0Button } from "@/components/design/open-in-v0";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -110,11 +109,6 @@ export function ComponentCard({
                   </Tooltip>
                 </TooltipProvider>
 
-                <OpenInV0Button
-                  registryUrl={registryUrl}
-                  title={promptTitle}
-                  prompt={prompt}
-                />
               </div>
             </div>
           </div>

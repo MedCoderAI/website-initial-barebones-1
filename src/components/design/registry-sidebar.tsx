@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Blocks,
   ChevronDown,
@@ -12,17 +11,16 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import { RegistryLogo } from "@/components/design/registry-logo";
-import { ModeToggle } from "@/components/design/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { RegistryLogo } from "@/components/design/registry-logo.tsx";
+import { ModeToggle } from "@/components/design/theme-toggle.tsx";
+import { Button } from "@/components/ui/button.tsx";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "@/components/ui/collapsible.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { ScrollArea } from "@/components/ui/scroll-area.tsx";
 import {
   Sidebar,
   SidebarContent,
@@ -35,9 +33,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from "@/components/ui/sidebar.tsx";
 import type * as React from "react";
-
 export const componentItems = [
   { name: "Accordion", path: "/components/accordion" },
   { name: "Alert", path: "/components/alert" },
@@ -66,23 +63,19 @@ export const componentItems = [
   { name: "Toggle Group", path: "/components/toggle-group" },
   { name: "Tooltip", path: "/components/tooltip" },
 ];
-
 export const blockItems = [
   { name: "Hero", path: "/blocks/hero" },
   { name: "Login", path: "/blocks/login" },
   { name: "Promo", path: "/blocks/promo" },
   { name: "Product Grid", path: "/blocks/product-grid" },
 ];
-
 export const gettingStartedItems = [
   { name: "Home", path: "/" },
-  { name: "Design Tokens", path: "/tokens" },
+  { name: "Design Tokens", path: "/design-tokens" },
   { name: "Starters", path: "/starters" },
 ];
-
 export function MobileSidebarTrigger() {
   const { setOpenMobile } = useSidebar();
-
   return (
     <div className="absolute top-8 right-4 md:hidden">
       <Button aria-label="Open menu" onClick={() => setOpenMobile(true)}>
@@ -91,26 +84,22 @@ export function MobileSidebarTrigger() {
     </div>
   );
 }
-
 export function RegistrySidebar() {
   const pathname = usePathname();
-
   const { setOpenMobile } = useSidebar();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
-
   useEffect(() => {
     if (searchTerm) {
       setFilteredComponents(
         componentItems.filter((item) =>
-          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
         ),
       );
       setFilteredBlocks(
         blockItems.filter((item) =>
-          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
         ),
       );
     } else {
@@ -118,7 +107,6 @@ export function RegistrySidebar() {
       setFilteredBlocks(blockItems);
     }
   }, [searchTerm]);
-
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="border-b">
@@ -126,7 +114,6 @@ export function RegistrySidebar() {
           <Link href="/" className="flex min-w-0 items-center gap-2">
             <RegistryLogo />
           </Link>
-
           <Button
             variant="ghost"
             className="md:hidden"
@@ -148,7 +135,6 @@ export function RegistrySidebar() {
           </div>
         </div>
       </SidebarHeader>
-
       <SidebarContent>
         <ScrollArea className="h-full w-full pr-2">
           <Collapsible defaultOpen={true} className="group/collapsible">
@@ -164,7 +150,6 @@ export function RegistrySidebar() {
                   <ChevronDown className="size-4 flex-shrink-0 opacity-100 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
-
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
@@ -175,7 +160,8 @@ export function RegistrySidebar() {
                           isActive={pathname === item.path}
                         >
                           <Link
-                            onClick={() => setOpenMobile(false)}
+                            onClick={() =>
+                              setOpenMobile(false)}
                             href={item.path}
                           >
                             {item.name}
@@ -188,7 +174,6 @@ export function RegistrySidebar() {
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
-
           <Collapsible defaultOpen={true} className="group/collapsible">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
@@ -202,7 +187,6 @@ export function RegistrySidebar() {
                   <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
-
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
@@ -213,7 +197,8 @@ export function RegistrySidebar() {
                           isActive={pathname === item.path}
                         >
                           <Link
-                            onClick={() => setOpenMobile(false)}
+                            onClick={() =>
+                              setOpenMobile(false)}
                             href={item.path}
                           >
                             {item.name}
@@ -226,7 +211,6 @@ export function RegistrySidebar() {
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
-
           <Collapsible defaultOpen={true} className="group/collapsible">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
@@ -250,7 +234,8 @@ export function RegistrySidebar() {
                           isActive={pathname === item.path}
                         >
                           <Link
-                            onClick={() => setOpenMobile(false)}
+                            onClick={() =>
+                              setOpenMobile(false)}
                             href={item.path}
                           >
                             {item.name}
@@ -265,7 +250,6 @@ export function RegistrySidebar() {
           </Collapsible>
         </ScrollArea>
       </SidebarContent>
-
       <SidebarFooter>
         <div className="flex justify-end">
           <ModeToggle />
