@@ -73,6 +73,8 @@ export const gettingStartedItems = [
   { name: "Home", path: "/" },
   { name: "Design Tokens", path: "/design-tokens" },
   { name: "Starters", path: "/starters" },
+  { name: "About", path: "/about" },
+
 ];
 export function MobileSidebarTrigger() {
   const { setOpenMobile } = useSidebar();
